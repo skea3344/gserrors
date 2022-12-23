@@ -12,9 +12,10 @@ func TestNewf(t *testing.T) {
 	fmt.Println(err)
 }
 
-func TestRequire(t *testing.T) {
+func TestRequireAndEnsure(t *testing.T) {
 	a := 1
 	b := 2
 	c := a + b
 	Require(c == 3, "")
+	Ensure(func() bool { return c > a }, "")
 }
